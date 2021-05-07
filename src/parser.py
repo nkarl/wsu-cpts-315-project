@@ -84,7 +84,7 @@ def parseAllDataToCSV(company_list, key_list):
     j = 0  # starting from key at j position
     for i in range(len(company_list)):
         if len(key_list) < 5:
-            time.sleep(30 / len(key_list))  # sleep for some time before making the next API call
+            time.sleep(15 / len(key_list))  # sleep for some time before making the next API call
 
     # resets the key list if reached last key
         print((company_list[i], key_list[j]))
