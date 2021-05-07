@@ -14,4 +14,9 @@ SP500_SYMBOLS = ['JNJ', 'NFLX', 'NVDA', 'UNH', 'WFC', 'C', 'COST', 'QCOM', 'PFE'
                  'INTC', 'BAC', 'PG', 'DIS']
 
 # parse all data for the given list of companies
-parser.parseAllDataToCSV(SP500_SYMBOLS, parser.getKeyList(keypath))
+# parser.parseAllDataToCSV(SP500_SYMBOLS, parser.getKeyList(keypath))
+
+
+"""
+Next up, need to pick an algorithm
+"""
