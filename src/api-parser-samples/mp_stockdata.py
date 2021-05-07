@@ -11,10 +11,10 @@ MY_API_KEY = 'M4JP31006H3PKZ8T'
 
 # PLOTTING TIME SERIES, INTRA-MINUTE VALUE FOR 'MSFT'
 # Using matplotlib, graph the minute to minute changes
-ts = TimeSeries(key="{}".format(MY_API_KEY), rapidapi=True,
+ts = TimeSeries(key=f"{MY_API_KEY}", rapidapi=True,
                     output_format='pandas',
                     indexing_type='date')
-ts = TimeSeries(key="{}".format(MY_API_KEY), output_format='pandas',
+ts = TimeSeries(key=f"{MY_API_KEY}", output_format='pandas',
                     indexing_type='date')
 
 tsdata, tsmeta_data = ts.get_intraday(
@@ -25,7 +25,7 @@ pyplot.title('Intraday Times Series for the MSFT stock (1min)')
 # pyplot.show()
 
 
-ti = TechIndicators(key="{}".format(MY_API_KEY), output_format='pandas',
+ti = TechIndicators(key=f"{MY_API_KEY}", output_format='pandas',
                         indexing_type='data')
 tidata, timeta_data = ti.get_bbands(symbol='MSFT', interval='60min',
                                     time_period=60)
