@@ -1,3 +1,7 @@
+"""
+This is a code sample where I (Norden) tested out threading to see
+if it can be used to improve performance. WIP.
+"""
 from alpha_vantage.timeseries import TimeSeries
 from alpha_vantage.techindicators import TechIndicators
 from alpha_vantage.sectorperformance import SectorPerformances
