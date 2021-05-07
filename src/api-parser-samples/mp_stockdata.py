@@ -19,7 +19,7 @@ ts = TimeSeries(key=f"{MY_API_KEY}", output_format='pandas',
 
 tsdata, tsmeta_data = ts.get_intraday(
     symbol='MSFT', interval='1min', outputsize='full')
-pprint(tsdata.head(200))
+pprint(tsdata.head(1000))
 tsdata['4. close'].plot()
 pyplot.title('Intraday Times Series for the MSFT stock (1min)')
 # pyplot.show()
@@ -29,15 +29,15 @@ ti = TechIndicators(key=f"{MY_API_KEY}", output_format='pandas',
                         indexing_type='data')
 tidata, timeta_data = ti.get_bbands(symbol='MSFT', interval='60min',
                                     time_period=60)
-pprint(tidata.head(200))
+pprint(tidata.head(1000))
 tidata.plot()
 pyplot.title('BBands indicator for MSFT stock (60min)')
 # pyplot.show()
 
 
-sp = SectorPerformances(key="{MY_API_KEY}", output_format='pandas')
+sp = SectorPerformances(key=f"{MY_API_KEY}", output_format='pandas')
 spdata, spmeta_data = sp.get_sector()
-pprint(spdata.head(200))
+pprint(spdata.head(1000))
 spdata['Rank A: Real-Time Performance'].plot(kind='bar')
 pyplot.title('Real Time Performance (%) per Sector')
 pyplot.tight_layout()
