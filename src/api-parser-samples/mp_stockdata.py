@@ -1,3 +1,8 @@
+"""
+This is the primary reference from Alpha Vantage that we use for
+our code base.
+"""
+
 from alpha_vantage.timeseries import TimeSeries
 from alpha_vantage.techindicators import TechIndicators
 from alpha_vantage.sectorperformance import SectorPerformances
@@ -22,7 +27,7 @@ tsdata, tsmeta_data = ts.get_intraday(
 pprint(tsdata.head(1000))
 tsdata['4. close'].plot()
 pyplot.title('Intraday Times Series for the MSFT stock (1min)')
-# pyplot.show()
+pyplot.show()
 
 
 ti = TechIndicators(key=f"{MY_API_KEY}", output_format='pandas',
@@ -32,7 +37,7 @@ tidata, timeta_data = ti.get_bbands(symbol='MSFT', interval='60min',
 pprint(tidata.head(1000))
 tidata.plot()
 pyplot.title('BBands indicator for MSFT stock (60min)')
-# pyplot.show()
+pyplot.show()
 
 
 sp = SectorPerformances(key=f"{MY_API_KEY}", output_format='pandas')
@@ -42,4 +47,4 @@ spdata['Rank A: Real-Time Performance'].plot(kind='bar')
 pyplot.title('Real Time Performance (%) per Sector')
 pyplot.tight_layout()
 pyplot.grid()
-# pyplot.show()
+pyplot.show()
