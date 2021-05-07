@@ -3,14 +3,14 @@ From the Alpha Vantage API, we are going to use Intraday (Extended history)
 for our data set. Within this set (containing over 2 million minute-points),
 we will use the 60-minute-points instead to cut down on the size of our input.
 """
+import time
 from alpha_vantage.timeseries import TimeSeries
 from alpha_vantage.techindicators import TechIndicators
 from alpha_vantage.sectorperformance import SectorPerformances
 from pprint import pprint
-
 from matplotlib import pyplot
 
-MY_API_KEY = 'M4JP31006H3PKZ8T'
+# MY_API_KEY = 'M4JP31006H3PKZ8T'
 
 
 # # getting the slice/snapshot of monthly data over 2 years
@@ -40,7 +40,7 @@ def writeData(path, data):
             writer.writerow(row)
 
 
-def getData(equity):
+def getData(equity, MY_API_KEY):
     """
     parse data for a given stock symbol.
 
@@ -61,3 +61,35 @@ def getData(equity):
     path += equity + ".csv"
     tidata.to_csv(path_or_buf=path)
 
+
+def getKeyList(keypath):
+    """
+    get a list of all keys to cycle through while parsing, to avoid exhausting each key.
+
+    :param keypath (list): a list of keys available from keypath.
+    """
+    key_list = list()
+    with open(mock_keypath) as keyfile:
+        key_list = keyfile.read().splitlines()
+    return key_list
+
+
+def parseAllDataToCSV(company_list, key_list):
+    """
+    make API calls and requests data for the given list of companies.
+
+    :param company_list (list): list of companies to request data from
+    :param key_list (list): list of keys to cycle through
+    """
+    j = 0  # starting from key at j position
+    for i in range(len(company_list)):
+        if len(key_list) < 10:
+            time.sleep(60 / len(key_list))  # sleep for some time before making the next API call
+
+    # resets the key list if reached last key
+    if j > len(key_list):
+        j = 0
+
+    print((company_list[i], j))
+    getData(company_list[i], key_list[j])
+    j += 1
