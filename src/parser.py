@@ -69,7 +69,7 @@ def getKeyList(keypath):
     :param keypath (list): a list of keys available from keypath.
     """
     key_list = list()
-    with open(mock_keypath) as keyfile:
+    with open(keypath) as keyfile:
         key_list = keyfile.read().splitlines()
     return key_list
 
