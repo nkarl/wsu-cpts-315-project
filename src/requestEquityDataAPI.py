@@ -60,7 +60,7 @@ def getKeyList(keypath):
     return key_list
 
 
-def parseAllDataToCSV(company_list, key_list, DBUG=False):
+def requestEquityData(company_list, key_list, DBUG=False):
     """
     make API calls and requests data for the given list of companies.
 
@@ -81,7 +81,3 @@ def parseAllDataToCSV(company_list, key_list, DBUG=False):
 
         # resets the key list if reached last key
         j = 0 if (j == len(key_list) - 1) else j + 1
-        # if j == len(key_list) - 1:
-            # j = 0
-        # else:
-            # j += 1
