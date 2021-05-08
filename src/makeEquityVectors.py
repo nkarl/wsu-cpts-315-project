@@ -42,7 +42,7 @@ def convert2Vectors(raw: list):
     v_start = vectors[0]
     normed  = (vectors - v_start)/abs(v_start - v_end)
 
-    return normed, v_start, v_end
+    return normed, normed[0], normed[-1]
 
 
 """
