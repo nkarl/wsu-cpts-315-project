@@ -37,3 +37,4 @@ x, s, e = EV.convert2Vectors(raw)
 
 
 w = tron.std_tron(e, x)
+print(f"the weight vector is: {w}")
