@@ -1,7 +1,16 @@
 """
-this module parse equity exchange data from csv and convert into vectors.
+this module extract equity data and convert to vectors.
 """
-import numpy as np
-import panda as pd
+import csv
+
+def getEquityData(path):
+    data = None
+    with open(path, newline='') as csvfile:
+        data = list(csv.reader(csvfile))
+    return data
 
 
+# test
+mycsvpath = 'data/TimeSeries/AAPL.csv'
+
+aa = getEquityData(mycsvpath)
