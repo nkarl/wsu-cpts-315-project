@@ -60,7 +60,7 @@ def getKeyList(keypath):
     return key_list
 
 
-def parseAllDataToCSV(company_list, key_list, DBUG=False):
+def requestEquityData(company_list, key_list, DBUG=False):
     """
     make API calls and requests data for the given list of companies.
 

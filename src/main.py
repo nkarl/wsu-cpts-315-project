@@ -1,7 +1,7 @@
 """
 This is the main module for our project.
 """
-import parser
+import requestEquityDataAPI as EquityAPI
 
 #-----------------------------------------------------------------------------
 # path to alpha vantage API keys
@@ -21,7 +21,7 @@ SP500_SYMBOLS = ['JNJ', 'NFLX', 'NVDA', 'UNH', 'WFC', 'C', 'COST', 'QCOM', 'PFE'
 #-----------------------------------------------------------------------------
 # parse all data for the given list of companies
 #-----------------------------------------------------------------------------
-# parser.parseAllDataToCSV(SP500_SYMBOLS, parser.getKeyList(keypath), DBUG=True)
+# EquityAPI.requestEquityData(SP500_SYMBOLS, parser.getKeyList(keypath), DBUG=True)
 
 
 """
