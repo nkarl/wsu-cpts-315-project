@@ -1,7 +1,7 @@
 # CPTS-315 Project
 ## Contributors:
-    - Charles Norden
-    - Ahbimanyu Raj Put
+- Charles Norden
+- Ahbimanyu Raj Put
 
 This is the official repo for our CPTS-315 group project.
 
